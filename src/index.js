@@ -5,19 +5,13 @@ const error = isDev ? console.error : () => { }
 
 function init(window, document)
 {
-    log('Initializing analytics');
     // Check if a global config object is defined
     const config = window.analyticsConfig || {};
-
     const API_BASE_URL = config.apiBaseUrl || (`${ !isDev ? 'https://analytics.jscloud.in' : 'http://localhost:3000' }/api/v1`);
 
     const PROJECT_ID = !isDev ? config.projectId : '670cfd5967d53bf2459c535e';
 
     const ACTIVITY_TRACKING_TIMEOUT = config.activityTrackingTimeout || (!isDev ? 15 * 60 * 1000 /*15 mins */ : 5 * 60 * 1000/* 5mins*/);
-
-
-    log('APi base url', API_BASE_URL);
-    log('Project Id', PROJECT_ID);
 
     if (!PROJECT_ID)
         throw new Error('No project-id specified. Please specify Project id in the global config.');
