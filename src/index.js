@@ -5,6 +5,7 @@ const error = isDev ? console.error : () => { }
 
 function init(window, document)
 {
+
     // Check if a global config object is defined
     const config = window.analyticsConfig || {};
     const API_BASE_URL = config.apiBaseUrl || (`${ !isDev ? 'https://analytics.jscloud.in' : 'http://localhost:3000' }/api/v1`);
