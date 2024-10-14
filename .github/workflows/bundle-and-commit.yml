@@ -4,7 +4,7 @@ name: Build and Deploy to GitHub
 on:
   push:
     branches:
-      - main  # Adjust if you're using a different branch
+      - master  # Adjust if you're using a different branch
 
 jobs:
   build:
